@@ -12,6 +12,7 @@ const commands = [
     new SlashCommandBuilder().setName('server').setDescription('Renvoie les infos du serveur!'),
     new SlashCommandBuilder().setName('user').setDescription('Renvoie les infos de l\'utilisateur!'),
     new SlashCommandBuilder().setName('time').setDescription('Renvoie les infos sur l\'heure'),
+    new SlashCommandBuilder().setName('google').setDescription('Resultat de votre recherche : '),
 ]
     .map(command => command.toJSON());
 

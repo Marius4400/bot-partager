@@ -15,6 +15,8 @@ const heure = now.getHours();
 const minute = now.getMinutes();
 const seconde = now.getSeconds();
 
+//url-recherche : https://www.google.com/search?q=
+
  // Une fois que mon bot est "ready" (en ligne)
  client.once('ready', () => { 
     //() => est egal a anonyme function : function()
