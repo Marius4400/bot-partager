@@ -12,7 +12,12 @@ const commands = [
     new SlashCommandBuilder().setName('server').setDescription('Renvoie les infos du serveur!'),
     new SlashCommandBuilder().setName('user').setDescription('Renvoie les infos de l\'utilisateur!'),
     new SlashCommandBuilder().setName('time').setDescription('Renvoie les infos sur l\'heure'),
+    new SlashCommandBuilder().setName('google').setDescription('Renvoie les infos sur les nfts sur google'),
+    new SlashCommandBuilder().setName('googleimg').setDescription('Renvoie une image de nft sur google image'),
+    new SlashCommandBuilder().setName('youtube').setDescription('Renvoie une video youtube sur les nfts'),
+    new SlashCommandBuilder().setName('meteo').setDescription('Renvoie les infos sur la meteo'),
 ]
+
     .map(command => command.toJSON());
 
 const rest = new REST({ version: '9' }).setToken(token);

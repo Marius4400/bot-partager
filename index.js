@@ -39,6 +39,11 @@ client.on('interactionCreate', async interaction => {
         }
     } else if (commandName === 'google'){
         await interaction.reply (`Bonjour ${interaction.member}\nVoici le résultat de la recherche : `)
+    } else if (commandName === 'google img'){
+        await interaction.reply (`Bonjour ${interaction.member}\nVoici le resultat de la recherche : `)
+
+    } else if (commandName === 'youtube'){
+        await interaction.reply (`Bonjour ${interaction.member}\nVoici le resultat de la recherche : `)
     }
 });
 
