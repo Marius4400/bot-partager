@@ -1,4 +1,4 @@
-const { Client, Intents } = require("discord.js");
+const { Client, Intents, Message, CommandInteraction, CommandInteractionOptionResolver } = require("discord.js");
 require("dotenv").config();
 
 const botToken = process.env.TOKEN;
@@ -26,7 +26,7 @@ const seconde = now.getSeconds();
 client.on('interactionCreate', async interaction => {
     if (!interaction.isCommand()) return;
 
-    const { commandName } = interaction;
+    const { commandName, options } = interaction;
 
     if (commandName === 'ping') {
         await interaction.reply('Pong!');
@@ -40,7 +40,9 @@ client.on('interactionCreate', async interaction => {
          } else {await interaction.reply (`Bonjour ${interaction.member}\nIl est : ${heure} h ${minute} et ${seconde} secondes\nBonne soirée`)
         }
     } else if (commandName === 'google'){
-        await interaction.reply (`Bonjour ${interaction.member}\nVoici le résultat de la recherche : `)
+        const search = options.getString("recherche")
+        const recherche = `https://www.google.com/search?q=${search}`
+        await interaction.reply(`Bonjour ${interaction.member}\nVoici le résultat de la recherche : ${recherche} `)
     }
 });
 
