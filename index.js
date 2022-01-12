@@ -48,7 +48,9 @@ client.on('interactionCreate', async interaction => {
         await interaction.reply(`Bonjour ${interaction.member}\nVoici le résultat de la recherche : ${recherche} `)
 
     } else if (commandName === 'google img'){
-        await interaction.reply (`Bonjour ${interaction.member}\nVoici le resultat de la recherche : `)
+        const search = options.getString("recherche")
+        const rechercheimage = `https://www.google.com/search?q${search}+image`
+        await interaction.reply (`Bonjour ${interaction.member}\nVoici le resultat de la recherche : ${rechercheimage}`)
 
     } else if (commandName === 'youtube'){
         await interaction.reply (`Bonjour ${interaction.member}\nVoici le resultat de la recherche : `)
