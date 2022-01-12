@@ -18,8 +18,6 @@ const heure = now.getHours();
 const minute = now.getMinutes();
 const seconde = now.getSeconds();
 
-//url-recherche : https://www.google.com/search?q=
-
  // Une fois que mon bot est "ready" (en ligne)
  client.once('ready', () => { 
     //() => est egal a anonyme function : function()
@@ -30,6 +28,8 @@ client.on('interactionCreate', async interaction => {
     if (!interaction.isCommand()) return;
 
     const { commandName, options } = interaction;
+
+    console.log(interaction);
 
     if (commandName === 'ping') {
         await interaction.reply('Pong!');
@@ -58,14 +58,14 @@ client.on('interactionCreate', async interaction => {
         await interaction.reply (`Bonjour ${interaction.member}\nVoici le resultat de la recherche youtube : ${rechercheyoutube}`)
 
     } else if (commandName === 'meteo'){
-        const ville = options.getString("ville")
-        await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${ville}&appid=f86afd5a2dc01fbea51d5bbf57de0ded`)
-        .then(response => response.json());
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=Péruwelz,BE&appid=f86afd5a2dc01fbea51d5bbf57de0ded`)
+        .then(response => {
+            return response.json()
+        })
     }
 });
 //code postal pz : 7600
-// key api f86afd5a2dc01fbea51d5bbf57de0ded
-//api.openweathermap.org/data/2.5/weather?q=Mons&appid=f86afd5a2dc01fbea51d5bbf57de0ded
+//url-recherche : https://www.google.com/search?q=
 
  // Permet de lier notre bot à notre serveur
 client.login(botToken);
