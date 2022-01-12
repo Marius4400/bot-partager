@@ -14,7 +14,11 @@ const commands = [
     new SlashCommandBuilder().setName('time').setDescription('Renvoie les infos sur l\'heure'),
     new SlashCommandBuilder().setName('googleimg').setDescription('Renvoie une image de nft sur google image'),
     new SlashCommandBuilder().setName('youtube').setDescription('Renvoie une video youtube sur les nfts'),
-    new SlashCommandBuilder().setName('meteo').setDescription('Renvoie les infos sur la meteo'),
+    new SlashCommandBuilder().setName('meteo').setDescription('Renvoie les infos sur la meteo')
+        .addStringOption(option =>
+        option.setName('ville')
+            .setDescription('Votre ville')
+            .setRequired(true)),
     new SlashCommandBuilder().setName('google').setDescription('Resultat de votre recherche : ')
         .addStringOption(option =>
             option.setName('recherche')

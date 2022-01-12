@@ -3,6 +3,9 @@ require("dotenv").config();
 
 const botToken = process.env.TOKEN;
 
+//node-fetch api meteo
+const fetch = require('node-fetch');
+
 
 // Créer une instance de mon bot
 const client = new Client({
@@ -49,8 +52,16 @@ client.on('interactionCreate', async interaction => {
 
     } else if (commandName === 'youtube'){
         await interaction.reply (`Bonjour ${interaction.member}\nVoici le resultat de la recherche : `)
+
+    } else if (commandName === 'meteo'){
+        const ville = options.getString("ville")
+        await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${ville}&appid=f86afd5a2dc01fbea51d5bbf57de0ded`)
+        .then(response => response.json());
     }
 });
+//code postal pz : 7600
+// key api f86afd5a2dc01fbea51d5bbf57de0ded
+//api.openweathermap.org/data/2.5/weather?q=Mons&appid=f86afd5a2dc01fbea51d5bbf57de0ded
 
  // Permet de lier notre bot à notre serveur
 client.login(botToken);
