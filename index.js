@@ -45,15 +45,17 @@ client.on('interactionCreate', async interaction => {
     } else if (commandName === 'google'){
         const search = options.getString("recherche")
         const recherche = `https://www.google.com/search?q=${search}`
-        await interaction.reply(`Bonjour ${interaction.member}\nVoici le résultat de la recherche : ${recherche} `)
+        await interaction.reply(`Bonjour ${interaction.member}\nVoici le résultat de la recherche google : ${recherche} `)
 
-    } else if (commandName === 'google img'){
-        const search = options.getString("recherche")
-        const rechercheimage = `https://www.google.com/search?q${search}+image`
-        await interaction.reply (`Bonjour ${interaction.member}\nVoici le resultat de la recherche : ${rechercheimage}`)
+    } else if (commandName === 'googleimg'){
+        const image = options.getString("googleimg")
+        const rechercheimage = `https://www.google.com/search?tbm=isch&q=${image}`
+        await interaction.reply (`Bonjour ${interaction.member}\nVoici le resultat de la recherche sur google image : ${rechercheimage}`)
 
     } else if (commandName === 'youtube'){
-        await interaction.reply (`Bonjour ${interaction.member}\nVoici le resultat de la recherche : `)
+        const youtube = options.getString("youtube")
+        const rechercheyoutube = `https://www.youtube.com/results?search_query=${youtube}`
+        await interaction.reply (`Bonjour ${interaction.member}\nVoici le resultat de la recherche youtube : ${rechercheyoutube}`)
 
     } else if (commandName === 'meteo'){
         const ville = options.getString("ville")

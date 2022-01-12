@@ -12,21 +12,25 @@ const commands = [
     new SlashCommandBuilder().setName('server').setDescription('Renvoie les infos du serveur!'),
     new SlashCommandBuilder().setName('user').setDescription('Renvoie les infos de l\'utilisateur!'),
     new SlashCommandBuilder().setName('time').setDescription('Renvoie les infos sur l\'heure'),
-    new SlashCommandBuilder().setName('youtube').setDescription('Renvoie une video youtube sur les nfts'),
+    new SlashCommandBuilder().setName('youtube').setDescription('Renvoie le lien de recherche youtube : ')
+        .addStringOption(option =>
+        option.setName('youtube')
+            .setDescription('Votre recherche youtube')
+            .setRequired(true)),
     new SlashCommandBuilder().setName('meteo').setDescription('Renvoie les infos sur la meteo')
         .addStringOption(option =>
         option.setName('ville')
             .setDescription('Votre ville')
             .setRequired(true)),
-    new SlashCommandBuilder().setName('google').setDescription('Resultat de votre recherche : ')
+    new SlashCommandBuilder().setName('google').setDescription('Resultat de votre recherche sur google: ')
         .addStringOption(option =>
             option.setName('recherche')
-                .setDescription('Votre recherche')
+                .setDescription('Google')
                 .setRequired(true)),
-    new SlashCommandBuilder().setName('googleimg').setDescription('Renvoie une image de nft sur google image')  
+    new SlashCommandBuilder().setName('googleimg').setDescription('Resultat de votre recherche sur google image : ')  
         .addStringOption(option =>
-            option.setName('recherche')
-                .setDescription('Votre recherche')
+            option.setName('googleimg')
+                .setDescription('Image')
                 .setRequired(true)),
 ]
 
